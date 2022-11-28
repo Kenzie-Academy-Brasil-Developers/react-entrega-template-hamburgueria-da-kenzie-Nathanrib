@@ -9,7 +9,7 @@ import { api } from "../../api/api.js"
 
 export const IndexPage = ({ productsList, setProductsList, cartProductsList, addProductToCart, removeProductFromCart }) => {
 
-    const [filter, setFilter] = useState("todos")
+    const [filter, setFilter] = useState("Todos")
 
 
     useEffect(() => {
@@ -26,7 +26,7 @@ export const IndexPage = ({ productsList, setProductsList, cartProductsList, add
 
 
     const transactionsFiltered = productsList.filter(element => {
-        if (filter.length < 5) {
+        if (!filter) {
             return element
         } else {
             return element.category.toLowerCase() === filter.toLowerCase() || element.name.toLowerCase() === filter.toLowerCase()
