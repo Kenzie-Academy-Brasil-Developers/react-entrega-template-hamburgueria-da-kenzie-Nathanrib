@@ -7,8 +7,8 @@ flex-direction: column;
 border: 1px solid #E0E0E0;
 border-radius: 5px;
 gap: 14px;
-max-width: 260px;
-min-width: 260px;
+max-width: 245px;
+min-width: 245px;
 
 > img {
 background-color: #f5f5f5;

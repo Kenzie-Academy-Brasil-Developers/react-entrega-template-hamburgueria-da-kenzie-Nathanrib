@@ -5,7 +5,7 @@ export const ProductsList = ({ productsList, addProductToCart }) => {
     return (
 
         <StyleListProducts>
-            {productsList.map((product) =>
+            {productsList?.map((product) =>
                 <ProductCard key={product.id} product={product} addProductToCart={addProductToCart} />
 
             )}

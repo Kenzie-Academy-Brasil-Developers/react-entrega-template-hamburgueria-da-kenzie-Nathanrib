@@ -1,4 +1,5 @@
 import { StyleListFromCart } from "./style"
+import { FaTrash } from 'react-icons/fa'
 
 export const CartProducts = ({ product, removeProductFromCart }) => {
 
@@ -10,7 +11,7 @@ export const CartProducts = ({ product, removeProductFromCart }) => {
                 <h3>{product.name}</h3>
                 <p>{product.category}</p>
             </div>
-            <button onClick={() => removeProductFromCart(product.id)}>Remover</button>
+            <FaTrash color="#333333" onClick={() => removeProductFromCart(product.id)}></FaTrash>
         </StyleListFromCart>
     )
 }

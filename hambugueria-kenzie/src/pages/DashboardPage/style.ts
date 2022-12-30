@@ -24,7 +24,8 @@ export const StyleMain = styled.main`
 width: 100vw;
 display: flex;
 gap: 60px;
-padding: 32px 115px;
+justify-content: center;
+align-items: center ;
 
 @media (max-width: 900px){
     display: flex;

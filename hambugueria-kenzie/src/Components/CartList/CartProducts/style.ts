@@ -22,11 +22,12 @@ border-radius: 5px;
 
 div> h3 {
     font-size: 14px;
+    color: #333333 
 }
 
 div > p {
     font-size: 12px;
-    color: #828282;
+    color: #333333 
 }
 
 > button{

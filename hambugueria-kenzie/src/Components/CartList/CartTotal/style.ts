@@ -26,6 +26,7 @@ padding: 13px 20px;
 
 >p{
     font-weight: 600;
+    color: #333333  ;
 }
 > span {
     font-size: 14px;

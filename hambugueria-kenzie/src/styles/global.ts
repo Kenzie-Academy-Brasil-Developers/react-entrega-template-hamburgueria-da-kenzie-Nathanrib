@@ -12,11 +12,11 @@ export const GlobalStyle = createGlobalStyle`
 
 }
 
-h1, h2, h3, h4, h5, h6, p, a, span, li, button, input{
+h1, h2, h3, h4, h5, h6, p, a, span, li, button, input, label{
         font-family: 'Inter', sans-serif;
     }
 
-ul, ol, li{
+ul, ol, li, a{
     list-style: none;
 }
 

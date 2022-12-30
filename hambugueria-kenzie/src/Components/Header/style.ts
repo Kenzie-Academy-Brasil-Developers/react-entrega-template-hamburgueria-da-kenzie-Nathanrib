@@ -11,6 +11,14 @@ align-items: center;
     color: #EB5757;
     font-size: 16px;
 }
+
+> div {
+    display: flex;
+    gap: 8px;
+    > svg {
+        cursor: pointer;
+    }
+}
 @media (max-width: 900px){
     display: flex;
     flex-direction: column;
@@ -25,6 +33,7 @@ align-items: center;
 
 export const StyleFilter = styled.div `
 display: flex;
+justify-content: space-between;
 
 @media (max-width: 900px){
     display: flex;
