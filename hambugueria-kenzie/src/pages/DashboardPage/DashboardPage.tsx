@@ -1,6 +1,6 @@
 
 import { StyleHeader, StyleIndexPage, StyleMain } from "./style"
-import { useEffect, useState ,useContext} from "react"
+import { useEffect ,useContext} from "react"
 import { api } from "../../services/api"
 import { CartContext, ICartContext } from "../../contexts/CartContext"
 import { ProductsList } from "../../Components/ProductsList/ProductsList"
@@ -13,9 +13,8 @@ import { useNavigate } from "react-router-dom"
 
 export const DashboardPage = () => {
 
-    const {setProductsList, productsList, cartProductsList, addProductToCart, removeProductFromCart} = useContext<ICartContext>(CartContext)
+    const {setProductsList, cartProductsList, addProductToCart, removeProductFromCart, transactionsFiltered, setFilter} = useContext<ICartContext>(CartContext)
     const { user } = useContext(UserContext)
-     const [filter, setFilter] = useState("Todos")
     const navigate = useNavigate()
 
     if (!user) {
@@ -42,13 +41,7 @@ export const DashboardPage = () => {
 
 
 
-    const transactionsFiltered = productsList?.filter(element => {
-        if (!filter) {
-            return element
-        } else {
-            return element.category.toLowerCase() === filter.toLowerCase() || element.name.toLowerCase() === filter.toLowerCase()
-        }
-    })
+    
 
 
 
@@ -60,7 +53,7 @@ export const DashboardPage = () => {
             </StyleHeader>
            
             <StyleMain>
-                <ProductsList productsList={transactionsFiltered} addProductToCart={addProductToCart} />
+                <ProductsList transactionsFiltered={transactionsFiltered} addProductToCart={addProductToCart} />
                 <CartList cartProductsList={cartProductsList} removeProductFromCart={removeProductFromCart}/>
             </StyleMain>
         </StyleIndexPage>
