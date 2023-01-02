@@ -10,14 +10,8 @@ min-height: 100vh;
 export const StyleHeader = styled.div`
 display: flex;
 background-color: #f5f5f5;
+width: 100%;
 
-@media (max-width: 900px){
-   
-    display: flex;
-    flex-direction: column;
-
-    
-}
 `
 
 export const StyleMain = styled.main`
@@ -29,6 +23,7 @@ align-items: center ;
 
 @media (max-width: 900px){
     display: flex;
+    width: 100%;
     align-items: center;
     flex-direction: column;
     padding: 5px 15px;

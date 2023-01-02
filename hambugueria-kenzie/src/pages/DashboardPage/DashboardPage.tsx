@@ -6,17 +6,21 @@ import { CartContext, ICartContext } from "../../contexts/CartContext"
 import { ProductsList } from "../../Components/ProductsList/ProductsList"
 import { Header } from "../../Components/Header/Header"
 import { CartList } from "../../Components/CartList/CartList"
+import { UserContext } from "../../contexts/UserContext"
+import { useNavigate } from "react-router-dom"
 
 
 
 export const DashboardPage = () => {
 
     const {setProductsList, productsList, cartProductsList, addProductToCart, removeProductFromCart} = useContext<ICartContext>(CartContext)
-    
+    const { user } = useContext(UserContext)
+     const [filter, setFilter] = useState("Todos")
+    const navigate = useNavigate()
 
-    
-    const [filter, setFilter] = useState("Todos")
-
+    if (!user) {
+        navigate('/')
+    }
 
     useEffect(() => {
         
@@ -50,12 +54,11 @@ export const DashboardPage = () => {
 
     return (
         <StyleIndexPage>
-            <div>
             <StyleHeader>
                 <Header setFilter={setFilter}/>
                 
             </StyleHeader>
-            </div>
+           
             <StyleMain>
                 <ProductsList productsList={transactionsFiltered} addProductToCart={addProductToCart} />
                 <CartList cartProductsList={cartProductsList} removeProductFromCart={removeProductFromCart}/>

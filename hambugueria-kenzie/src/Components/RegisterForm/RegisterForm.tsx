@@ -45,6 +45,7 @@ export const RegisterForm = () => {
                             error={errors.name}
                             disabled={loading} 
                         />
+                
                     <Input
                             id="email"
                             label="E-mail"
@@ -54,6 +55,7 @@ export const RegisterForm = () => {
                             error={errors.email}
                             disabled={loading} 
                         />
+                        
                     
                     <Input
                             id="password"

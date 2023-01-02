@@ -7,6 +7,7 @@ display: flex;
 flex-direction: column;
 gap: 8px;
 width: 50%;
+min-width: 250px;
 align-items: center;
 padding: 15px;
 
@@ -33,6 +34,7 @@ padding: 15px;
 > a {
 display: flex;
 color: #999999;
+font-size: 12px;
 padding: 8px;
 border-radius: 4px;
 justify-content: center;

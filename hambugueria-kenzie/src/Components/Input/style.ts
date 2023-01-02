@@ -23,7 +23,14 @@ position: relative;
     font-size: 12px;
     color: #343B41;
     position: absolute;
-    top: -5px;
+    top: -6px;
     left: 8px;
+}
+> p {
+    font-size: 12px;
+    margin-left: 4px;
+    margin-top: -5px;
+    color: red;
+
 }
 `

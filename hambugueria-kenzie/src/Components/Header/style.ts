@@ -21,11 +21,31 @@ align-items: center;
 }
 @media (max-width: 900px){
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 15px;
     padding: 20px 15px;
-   
+    
+  
+    > div:first-of-type{
+        position: absolute;
+        bottom: 25px;
+        display: flex;
+        align-items: center;
+        background-color: #f5f5f5;
+        padding: 25px;
+        width: 100vw;
+        margin-left: -15px;
+
+    > input {
+        width: 200px;
+        padding: 10px;
+    }
+    > button{
+        padding: 7px 6px;
+        font-size: 12px;
+        width: max-content
+    }
+    }
+
     
 }
 
@@ -35,12 +55,7 @@ export const StyleFilter = styled.div `
 display: flex;
 justify-content: space-between;
 
-@media (max-width: 900px){
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    padding: 0;
-}
+
 
 >input{
     border: 1px solid #e0e0e0;
@@ -50,13 +65,6 @@ justify-content: space-between;
     position: relative;
     left: 25%;
 
-    
-@media (max-width: 900px){
-position: relative;
-left: 15%;
-align-self: center;
-}
-    
 }
 
 > button{
@@ -69,11 +77,15 @@ align-self: center;
     border-radius: 8px;
     align-self: center;
 
-    @media (max-width: 900px){
-    position: relative;
-    right: 15%;
-    align-self: center;
-    }
+}
 
+@media (max-width: 900px){
+display: flex;
+justify-content: center;
+
+> input {
+     left: 5rem;
+
+}
 }
 `

@@ -21,6 +21,7 @@ justify-content: center;
     margin: 15px 60px;
     > svg {
         max-width: 100%;
+        min-width: 250px;
     }
 }
 
@@ -28,4 +29,20 @@ justify-content: center;
     color: #EB5757;
     font-size: 16px;
 }   	
+
+
+@media (max-width: 900px){
+   
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+
+   >div{
+   width: max-content;
+   }
+> div > svg{
+    display: none;
+}
+}
 `

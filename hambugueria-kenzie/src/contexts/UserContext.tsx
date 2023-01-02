@@ -23,9 +23,6 @@ interface IUser{
     id: string;
 
 }
-export interface IDefaultErrorResponse{
-    error: string;
-}
 
 export interface IUserLoginResponse {
     user: IUser;
@@ -40,6 +37,7 @@ export interface IUserContext{
        registerRequest: (formResgiterData: IRegisterForm, setLoading: React.Dispatch<React.SetStateAction<boolean>>) => void;
        logout: () => void;
        loading: boolean;
+    
 
       
 }
@@ -65,14 +63,14 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
 
             setUser(userResponse)
             localStorage.setItem('@token', accessToken)
-            // localStorage.setItem('@USER', userResponse.id)
+    
 
             navigate("/dashboard")
 
 
-        } catch (error) {
-            const currentError = error as AxiosError<IDefaultErrorResponse>;
-            toast.error(currentError.response?.data.error)
+        } catch (error:any) {
+        
+            toast.error(error.response?.data)
 
         } finally {
             setLoading((false))
@@ -96,13 +94,13 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
             setLoading(true)
             const response = await api.post("users", formResgiterData)
             toast.success("Usuário criado com sucesso")
+            
             navigate('/')
 
-        } catch (error) {
-
-            const currentError = error as AxiosError<IDefaultErrorResponse>;
-            toast.error(currentError.response?.data.error)
-
+        } catch (error:any) {
+        
+            toast.error(error.response?.data)
+           
 
         } finally {
             setLoading((false))
@@ -113,7 +111,7 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
 
 
     return (
-        <UserContext.Provider value={{ user, userLogin, logout, registerRequest, loading }}>
+        <UserContext.Provider value={{ user, userLogin, logout, registerRequest, loading}}>
             {children}
         </UserContext.Provider>
     )
